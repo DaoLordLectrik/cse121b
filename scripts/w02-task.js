@@ -11,24 +11,22 @@ let profilePicture = 'images/profile-image.jpg';
 const nameElement = document.getElementById('name');
 const foodElement = document.getElementById('food');
 const yearElement = document.querySelector('#year');
-const imageElement = document.getElementById("profile-image");
+const imageElement = document.querySelector('img');
 
 /* Step 4 - Adding Content */
 nameElement.innerHTML = `<strong>${fullName}</strong>`;
+yearElement.textContent = currentYear;
 imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute('alt', 'Profile image of ' + nameElement);
+imageElement.setAttribute('alt',`Profile image of ${fullName}`);
 
 /* Step 5 - Array */
-const favourateFoods = ['Fufu', 'Jollof', 'TZ', 'Banku', 'Khebab'];
+const favourateFoods = ['Fufu', 'Jollof', 'Tuo Zaafi', 'Banku', 'Khebab'];
+foodElement.innerHTML = favourateFoods;
 const anotherFavourateFood = 'Konkonte';
 favourateFoods.push(anotherFavourateFood);
 foodElement.innerHTML += `<br>${favourateFoods}`;
 favourateFoods.shift();
-
-let foodContent = "";
-favouriteFoods.forEach(food => {
-    foodContent += food + "<br>";
-});
-
-foodElement.innerHTML += foodContent;
+foodElement.innerHTML += `<br>${favourateFoods}`;
+favourateFoods.pop();
+foodElement.innerHTML += `<br>${favourateFoods}`;
 

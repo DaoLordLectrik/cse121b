@@ -6,12 +6,12 @@ let templeList = new Array;
 
 /* async displayTemples Function */
 const displayTemples = (temples) => {
-    temples.forEach(element => {
+    temples.forEach((element) => {
         const article = document.createElement('article');
         const temple_name = document.createElement('h3');
         temple_name.innerText = element.templeName;
         const temple_image = document.createElement('img');
-        temple_image.setAttribute('src', element.imageurl);
+        temple_image.setAttribute('src', element.imageUrl);
         temple_image.setAttribute('alt', element.location);
         article.appendChild(temple_name);
         article.appendChild(temple_image);
@@ -76,3 +76,4 @@ getTemples();
 
 /* Event Listener */
 document.querySelector("#filtered").addEventListener("change", () => { filterTemples(templeList) });
+

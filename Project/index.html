@@ -8,12 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>Weather Forecast</h1>
+    <h1>Weather Forecast <span id="weatherEmoji">⛅</span></h1>
+    <div id="imagePlaceholder">
+      <img src="images/clear2.webp" alt="Clear">
+      <img src="images/rain.webp" alt="Rain">
+      <img src="images/snow.webp" alt="Snow">
+      <img src="images/lighting.webp" alt="Ligthning">
+      <img src="images/clear.webp" alt="Clear Skies">
+    </div>
+    <p>Go ahead, try to find out what the weather is like... or just look out the window!</p> <p>Still, be sure to find out the forecast if you are going to the next town. <br><strong>Medaase</strong></p>
     <input type="text" id="locationInput" placeholder="Enter Location">
     <button id="fetchWeatherBtn">Get Weather</button>
     <div id="weatherInfo"></div>
     <div id="errorMessage" class="error"></div>
   </div>
+
+  <footer>
+    <p>&copy; 2024 Weather Forecast App by Fiifi Debrah aka &#x26A1;&#x26A1;. All rights definately not reserved.</p>
+  </footer>
 
   <script src="script/main.js"></script>
 </body>

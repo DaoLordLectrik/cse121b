@@ -38,3 +38,47 @@ function displayError(message) {
   document.getElementById('errorMessage').textContent = message;
   document.getElementById('weatherInfo').innerHTML = '';
 }
+
+// Adds an emoji in the header and changes according to the weather description received
+
+function displayWeather(data) {
+  const weatherInfo = document.getElementById('weatherInfo');
+  weatherInfo.innerHTML = `
+    <div class="weather-card">
+      <h2>Current Weather</h2>
+      <p>Location: ${data.name}</p>
+      <p>Temperature: ${data.main.temp}°C</p>
+      <p>Humidity: ${data.main.humidity}%</p>
+      <p>Wind Speed: ${data.wind.speed} m/s</p>
+      <p>Weather: ${data.weather[0].description}</p>
+    </div>
+  `;
+
+  updateWeatherEmoji(data.weather[0].description);
+}
+
+function updateWeatherEmoji(description) {
+  const weatherEmoji = document.getElementById('weatherEmoji');
+
+  switch (description.toLowerCase()) {
+    case 'thunderstorm':
+      weatherEmoji.textContent = '⛈️';
+      break;
+    case 'drizzle':
+    case 'rain':
+      weatherEmoji.textContent = '🌧️';
+      break;
+    case 'snow':
+      weatherEmoji.textContent = '❄️';
+      break;
+    case 'clear sky':
+      weatherEmoji.textContent = '☀️';
+      break;
+    case 'clouds':
+      weatherEmoji.textContent = '☁️';
+      break;
+    default:
+      weatherEmoji.textContent = '⛅';
+      break;
+  }
+}
